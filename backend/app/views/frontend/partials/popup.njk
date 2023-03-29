@@ -1,0 +1,562 @@
+<!-- profile Modal Start -->
+	<div class="modal fade modal-bg bd-example-modal-lg" id="profile" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	    <div class="modal-content">	    	
+	      <div class="modal-body">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span class="mtrlicclose"></span>
+	        </button>
+					<div class="login_signup_modal login_box">
+						<form method="post" action="/save"  enctype="multipart/form-data">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="text-center">
+										<div class="modal-logo">Profile</div>
+									</div>
+									<div class="profile_img"><img src="/frontend/upload/user/{{auth.user.profile_image}}"  alt="profile"> </div>
+									
+									<div class="form-group">
+										<input type="text" name="name" id="name" class="form-control" placeholder="James Gibbs" value="{{auth.user.name}}">
+									</div>
+
+									<div class="form-group">
+										<input type="text" name="name" id="name" class="form-control" placeholder="James Gibbs" value="{{auth.user.referral_code}}">
+										<span class="only_format">Referral code</span>
+									</div>
+
+									<div class="form-group">
+										<input type="text" name="name" id="name" class="form-control" placeholder="James Gibbs" value="{{auth.user.kickback_balance}}">
+										<span class="only_format">Total earning with referral</span>
+									</div>
+									
+								
+									{#<div class="form-group">
+										<input type="email" class="form-control" placeholder="jamesgibbs1@xyz.com">
+									</div>
+								
+									<div class="form-group">
+										<input type="password" class="form-control" placeholder="**********">
+										<a href="javascript:void(0);" class="view_password"><span class="mtrliceye"></span></a>
+									</div>#}
+
+									<div class="Choose_file">
+										<div class="custom-file-upload">
+											<input type="file" id="file" placeholder="Profile Picture" name="myfiles" accept="image/png, image/jpeg"/>
+										</div>
+									</div>
+									<span class="only_format">Only allow image png and jpeg</span>
+								</div>
+								<div class="col-lg-8 col-md-8 col-sm-9 mr-auto ml-auto mt-4">
+									<button type="submit" class="btn btn-orange-yellow btn-block">Submit</button>
+								</div>
+							</div>
+						</from>
+		    	</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+<!-- profile Modal End -->
+
+<!-- testimonial Modal Start -->
+	<div class="modal fade modal-bg" id="terms-condition" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		    <div class="modal-content">	    	
+		     	<div class="modal-body">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span class="mtrlicclose"></span>
+			        </button>
+					<div class="login_signup_modal testimonial_box">
+				        <div class="row">
+				        	<div class="col-lg-12">
+				        		<div class="modal-logo text-center">TERM OF SERVICE</div>
+				        		<div class="form-group">
+				        			<div class="testimonial_text" style="text-align-last: center; color: white">
+					        			<p>Hey there! Thanks for using SolStonks. We're glad to see that some people are reading this.</p>
+
+										<p>People often perceive gambling sites as rather suspicious, and we like to think that SolStonks stands out clearly from the crowd.</p>
+
+										<p>We understand that you, the player, want to make sure that the site you use is legit when you gamble.</p>
+										<p>If you're reading this, that's great. When using gambling sites, we strongly recommend you do your research before trusting anybody.</p>
+										<p>We genuinely want you to be comfortable when using SolStonks. Whether you're gambling with pennies or if you have millions in your balance, we want you to know that you're in good hands.</p>
+										<p>For this reason, we want to be as transparent as possible.</p>
+										<p>Being fair towards our customers is incredibly important to us, and we want to show the world how fair we really are.</p>
+										<p>Most importantly, we want to ensure that the rules of SolStonks are fair and just and that we communicate them transparently. We're not the type of project that would take advantage of you with legal loopholes or hide unfair clauses in the small print.</p>
+										<p>These Terms are a binding agreement between you (we will use the word 'you' to refer to you as the person accessing SolStonks site(s)) ("Service") and SolStonks (we will refer to ourselves in these Terms as "SolStonks," "us" or "we").</p>
+										<p>When you use our Services, now or in the future, you agree to the latest Terms of Service.</p>
+										<p>If you violate any of these terms, we may close your account. That's a broad statement, and it means you will need to put a lot of trust in us. We do our best to deserve that trust by being as transparent as possible.</p>
+										<h5>ACCOUNT SECURITY</h5>
+										<p>You are responsible for ensuring that your account is secure. We will not be liable for any losses or damages from your failure to comply with this security obligation. We highly recommend that you do not share your wallet with anyone.</p>
+										<p>SolStonks accounts are not intended to be shared. If somebody else logs into your account, we will not be liable for any damages or losses.</p>
+										<h5>BETTING</h5>
+										<p>All bets are final. If you lose your funds by betting, we will not give you a refund.</p>
+										<p>Although we do our best to prevent it, there will be technical issues sometimes. Every once in a while, specific withdrawing methods may be temporarily disabled. Even if you are temporarily unable to withdraw, we will not be liable for any lost bets. If you feel that you cannot control the temptation to bet, we highly recommend using requesting a ban from support.</p>
+									<h5>BETTING</h5>
+										<p>By default, we are not liable for providing refunds for any deposits. However, if you still have the coins in your balance, there is a good possibility of getting a refund.</p>
+										<p>When depositing or withdrawing with cryptocurrencies, you are responsible for ensuring that the transactions are done with the correct currency and the right address. If you make a mistake, we will not be liable for it.</p>
+										<p>SolStonks doesn't generate any profit from fees in the deposit and withdrawal process. However, there may be fees by 3rd-party payment processors. The players will have to cover these fees.</p>
+										<p>We will do our best to make the deposit and withdrawal system intuitive and easy to use. We will do our best to safeguard you from making any mistakes or accidents that could cause monetary losses. However, mistakes can happen and will happen. We will not be liable for your mistakes.</p>
+									<h5>WHO CAN USE SOLSTONKS</h5>
+										<p>You must be over the age of 18 and over the legal age to gamble with cryptocurrency in your area of jurisdiction.</p>
+										<p>Although we do our best to prevent it, there will be technical issues sometimes. Every once in a while, specific withdrawing methods may be temporarily disabled. Even if you are temporarily unable to withdraw, we will not be liable for any lost bets. If you feel that you cannot control the temptation to bet, we highly recommend using requesting a ban from support.</p>
+									<h5>CONNECTION ISSUES</h5>
+										<p>Sometimes, connection issues and lag will happen.</p>
+										<p>You may want to place a bet, but the bet doesn't get processed in time. This could happen due to connection issues on your end or due to problems with our servers. You may miss out on a winning bet because of a server issue, but on the other hand, this may also rescue you from a losing bet.</p>
+										<p>While this can be frustrating, we cannot hold the liability of compensating for any lost bets. We will do our best to prevent such outages, and we will investigate any complaints on a case-by-case basis. However, we cannot promise compensation in this scenario. The reason for this is simple: if we were to offer compensation for 'missed' wins, users could exploit that widely, and the expenses could be wildly high for us -- the ones who lost due to the lag would ask for a refund, but those who benefited from the lag would practically be gambling risk-free.</p>
+										<h5>MISCLICKS</h5>
+										<p>Similar to the above, we cannot refund you for misclicks or accidental bets. Again, the reasoning is simple: we cannot know if it was a genuine misclick or not, and if you were to win the bet, you wouldn't be refunding us either. In summary, we cannot offer risk-free gambling where you have a chance to win but no chance of losing.</p>
+	
+
+
+
+
+
+									</div>
+				        		</div>
+				        	</div>
+				        </div>
+				    </div>
+		    	</div>
+	      	</div>
+	    </div>
+	</div>
+<!-- testimonial Modal End -->
+
+<!-- About Modal Start -->
+	<div class="modal fade modal-bg" id="about" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		    <div class="modal-content">	    	
+		     	<div class="modal-body">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span class="mtrlicclose"></span>
+			        </button>
+					<div class="login_signup_modal testimonial_box">
+				        <div class="row">
+				        	<div class="col-lg-12">
+				        		<div class="modal-logo text-center">HOW TO PLAY</div>
+										<div class="testimonial_text" style="text-align-last: left;">
+										<p>First off you need to connect with a wallet that supports solana. </p>
+										<p>We would recommend to use Phantom Wallet https://phantom.app/
+Once you got Phantom wallet installed follow these steps: </p>
+				        		<ul style="color: white">
+											<li><span class="text-gold">1</span><strong>―</strong>Connect by pressing "login" and accept the requests from phantom.</li>
+											<li><span class="text-gold">2</span> <strong>―</strong>To deposit solana press on "deposit" and type in the desired amount. </li>
+											<li><span class="text-gold">3</span><strong>―</strong>Bet on a color of your choice and try your luck!</li>
+											<li><span class="text-gold">4</span><strong>―</strong>Withdraw your winnings by pressing on "withdraw" and typing in the amount you wish to withdraw. </li>
+										</ul>
+										<br/>
+										<p>Lets get these Stonks!</p>
+										<br/>
+				        	</div>
+				        </div>
+				    </div>
+		    	</div>
+	      	</div>
+	    </div>
+	</div>
+<!-- About Modal End -->
+
+<!-- faq Modal Start -->
+	<div class="modal fade modal-bg" id="faq" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		    <div class="modal-content">	    	
+		     	<div class="modal-body">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span class="mtrlicclose"></span>
+			        </button>
+					<div class="login_signup_modal testimonial_box">
+				        <div class="row">
+				        	<div class="col-lg-12">
+				        		<div class="modal-logo text-center">FAQ</div>
+				        		<div class="form-group">
+				        			<div class="faq_count">
+									    <div class="accordion" id="accordionExample">
+									        <div class="card">
+									            <div class="card-header" id="headingOne">
+									                <h2>
+									                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne">What is SolStonks? <i class="fa fa-caret-down" aria-hidden="true"></i></button>									
+									                </h2>
+									            </div>
+									            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+									                <div class="card-body">
+									                    <p>Solstonks NFT is a project founded by a team of former employees at a major CSGO casino gambling site. We have been interested in tech all our lives and when we saw that casinos started to pick up traction within the NFT scene we saw an opportunity to bring our knowledge to the space.</p>
+									                    <p>Very few of the current Solana casinos provide the experience we know players are looking for, and we are looking to fill that gap. We will be starting with roulette, since we know it's one of the most popular games, but we are already working on more games.</p>
+									                    <p>Each game on our website will have it's own NFT collectionalong with it, and the revenue that is generated through the game will be distributed to the holders of the NFTs in that collection. This will allow us to create a really strong community within the solana ecosystem which will help us grow the casino and its playerbase over time.</p>
+
+									                </div>
+									            </div>
+									        </div>
+									        <div class="card">
+									            <div class="card-header" id="headingTwo">
+									                <h2>
+									                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo">What do the colors mean? <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+									                </h2>
+									            </div>
+									            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+									                <div class="card-body">
+									                    <p>Purple gives you 2x the money back,  if you bet on it and it lands on it as well. </p>
+									                    <p>White gives you 2x the money back, if you bet on it and it lands on it as well. </p>
+									                    <p>and orange gives you 14x the betted money, if it lands on orange.  </p>
+
+									                </div>
+									            </div>
+									        </div>
+									        <div class="card">
+									            <div class="card-header" id="headingThree">
+									                <h2>
+									                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree">What odds do i have? <i class="fa fa-caret-down" aria-hidden="true"></i></button>                     
+									                </h2>
+									            </div>
+									            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+									                <div class="card-body">
+									                     <p>There are 15 chances in total.</p>
+									                     <p>7/15 chance that it lands on WHITE</p>
+									                     <p>7/15 chance that it lands on PURPLE</p>
+									                     <p>7/15 chance that it lands on ORANGE</p>
+									                     <p>They are all randomised so it could theoretically land on any color several times in a row. In the long run these are the odds that the game has. </p>
+
+									                </div>
+									            </div>
+									        </div>
+									    </div>
+									</div>
+				        		</div>
+				        	</div>
+				        </div>
+				    </div>
+		    	</div>
+	      	</div>
+	    </div>
+	</div>
+<!-- faq Modal End -->
+
+<!-- support Modal Start -->
+	<div class="modal fade modal-bg" id="support" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		    <div class="modal-content">	    	
+		     	<div class="modal-body">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span class="mtrlicclose"></span>
+			        </button>
+					<div class="login_signup_modal testimonial_box support_form">
+				        <div class="row">
+				        	<div class="col-lg-12">
+				        		
+				        		<div class="modal-logo text-center">Support</div>
+				        		<form>
+								  <div class="form-group">
+								    <label for="exampleInputEmail1">Email address</label>
+								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+								   
+								  </div>
+								  <div class="form-group">
+								  	 <label for="discrtionInputEmail1">Description</label>
+								    <textarea class="form-control" id="discrtionInputEmail1"  placeholder="Description" rows="3"></textarea>
+								  </div>
+								  <button type="submit" class="btn submit_btn">Submit</button>
+								</form>
+				        	</div>
+				        </div>
+				    </div>
+		    	</div>
+	      	</div>
+	    </div>
+	</div>
+<!-- support Modal End -->
+
+<!-- chat rule Modal Start -->
+	<div class="modal fade modal-bg chatrulePopup" id="chatrule" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		    <div class="modal-content">	    	
+		     	<div class="modal-body">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span class="mtrlicclose"></span>
+			        </button>
+					<div class="login_signup_modal testimonial_box support_form">
+				        <div class="row">
+				        	<div class="col-lg-12">
+				        		
+				        		<div class="modal-logo text-center">Chat Rule</div>
+				        		<form>
+								  	<div class="testimonial_text Provably_fair_text chat_rules" style="margin-bottom: 1rem;">
+					        			<p>Chat Rules</p>
+										<!-- <p><span class="text-gold">1 ―</span> No begging. Asking for coins/ solana or posting your wallet address will get you muted</p>
+										<p><span class="text-gold">2 ―</span> No advertising (ex: referral codes, buying/selling coins, etc.)</p>
+										<p><span class="text-gold">3 ―</span> No "predictions" - If you continuously share your "predictions" of the upcoming game results, you'll get muted</p>
+										<p><span class="text-gold">4 ―</span> No "passive begging" - Indirectly asking for coins by offering "predictions" or by overly fanboying high level players will get you muted</p>
+										<p><span class="text-gold">5 ―</span> English only in the main room</p> -->
+
+										<ul>
+											<li><span class="text-gold">1</span><strong>―</strong>No begging. Asking for coins/ solana or posting your wallet address will get you muted</li>
+											<li><span class="text-gold">2</span> <strong>―</strong>No advertising (ex: referral codes, buying/selling coins, etc.)</li>
+											<li><span class="text-gold">3</span><strong>―</strong>No "predictions" - If you continuously share your "predictions" of the upcoming game results, you'll get muted</li>
+											<li><span class="text-gold">4</span><strong>―</strong>No "passive begging" - Indirectly asking for coins by offering "predictions" or by overly fanboying high level players will get you muted</li>
+											<li><span class="text-gold">5</span><strong>―</strong>English only in the main room</li>	
+										</ul>
+
+										
+									</div>
+								    <div class="form-group removecheckbox">
+									    <div class="custom-control custom-checkbox mb-3">
+									      <input type="checkbox" class="custom-control-input" id="customCheck" name="rules" value="0">
+									      <label class="custom-control-label" for="customCheck">Please accept chat rules.</label>
+									    </div>
+									</div>
+								    <button type="button" class="btn submit_btn" onclick="acceptRule()">Submit</button>
+								</form>
+				        	</div>
+				        </div>
+				    </div>
+		    	</div>
+	      	</div>
+	    </div>
+	</div>
+	<!-- chat rule Modal End -->
+
+<!-- provably-fair Modal Start -->
+	<div class="modal fade modal-bg" id="provably-fair" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		    <div class="modal-content">	    	
+		     	<div class="modal-body">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span class="mtrlicclose"></span>
+			        </button>
+					<div class="login_signup_modal testimonial_box provably-fair">
+				        <div class="row">
+				        	<div class="col-lg-12">
+				        		<div class="modal-logo text-center">FAIRNESS</div>
+				        		<div class="prov_tab">
+									<nav>
+									  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+									    <a class="nav-item nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="nav-home" aria-selected="true">Fairness</a>
+									    
+									    <a class="nav-item nav-link" id="implementation-tab" data-toggle="tab" href="#implementation" role="tab" aria-controls="nav-profile" aria-selected="false">Implementation</a>
+									    
+									    <a class="nav-item nav-link" id="current_server_seed-tab" data-toggle="tab" href="#current_server_seed" role="tab" aria-controls="nav-contact" aria-selected="false">Current Seed Pair</a>
+
+									   <a class="nav-item nav-link" id="change_server_seed-tab" data-toggle="tab" href="#change_server_seed" role="tab" aria-controls="nav-contact" aria-selected="false">Copy Seed Pair</a>
+
+									   <a class="nav-item nav-link" id="calculation_game_data-tab" data-toggle="tab" href="#calculation_game_data" role="tab" aria-controls="nav-contact" aria-selected="false">Calculation</a>
+									  </div>
+									</nav>
+									<div class="tab-content" id="nav-tabContent">
+										<div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab"><br/>
+										<h5 style="color: white">
+											<a href="https://en.wikipedia.org/wiki/Provably_fair" target="_blank"></a>HOW CAN I KNOW THAT THE GAME IS FAIR?</h5><br/>
+										<p>The game results have been generated BEFORE you even place your bet,and most importantly, we can prove it.
+										  Before each round, we actually give you the round result in a hashed format.</p><br/>
+										<p>Before the round, we give you the hash of the secret seed which the round result is based on.
+										  After the round ends, we publish the secret seed, which you can then compare to the hash to make sure that
+										  they match. With this system we can prove that the results were fair and pre-generated.</p><br/>
+										<p>For each verifiable bet a client seed, a server seed and a nonce are used as the input parameters.</p><br/>
+										
+										</div>
+										<div class="tab-pane fade" id="implementation" role="tabpanel" aria-labelledby="implementation-tab">
+										<p>For each verifiable bet, a client seed, a server seed and a nonce are used as the input parameters
+										  for the <a href="https://en.wikipedia.org/wiki/Random_number_generation" target="_blank">random number
+										    generator</a>. Bytes are generated using the <a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code" target="_blank">HMAC_SHA256</a> function. This function creates 32 random bytes (0-255) from a given
+										  server seed and a message. The message is created using the client seed, the nonce and an incremental
+										  number (round). This number starting with 0 gets increased by one every time the 32 bytes returned by
+										  the HMAC_SHA256 function are used. The message is then created by concatenating the client seed, a
+										  colon, the nonce, another colon and the incremental number.
+											</p>
+										<div>
+										  <h2 class="page-title">Client Seed</h2>
+										  <p>This is a passphrase or a randomly generated selection of text that is determined by the player or
+										    their browser. This can be edited and changed regularly (if desired) to create a new chain of
+										    randomness.</p>
+										  <h2 class="page-title">Server Seed</h2>
+										  <p>The server seed is generated by our system as a random 64-character hex string. You will then be
+										    provided with an encrypted hash of the server seed before you place any bets. The seed is encrypted
+										    to ensure that the outcome cannot be calculated by the player beforehand, but still provide the
+										    guarantee that the outcome has been pre-determined and not changed after the bet has been made.</p>
+										  <p>To reveal the hashed server seed, the seed must be rotated by the player,which triggers the
+										    replacement with a newly generated seed. From this point you are able to verify any bets made with
+										    the previous server seed to verify both the legitimacy of the server seed with the encrypted hash
+										    that was provided, but also with the outcomes of each bet placed on the casino when it was active.
+										  </p>
+										  <h2 class="page-title">Nonce</h2>
+										  <p>The nonce is simply a number that increments as every new bet is made. This generates a unique
+										    input per game, without having to generate a new client seed and server seed each time you play.</p>
+										</div>
+										</div>
+										<div class="tab-pane fade" id="current_server_seed" role="tabpanel" aria-labelledby="current_server_seed-tab">
+										 <div class="modal-dialog" role="document">
+										  <div class="modal-content">
+										    <div class="modal-header text-center">
+										        <h4 class="modal-title w-100 font-weight-bold">Fairness</h4>
+										        </div>
+										    <div class="modal-body mx-3">
+										      <div class="md-form mb-5">
+										        <label for="clintseed">Client Seed</label>
+										        <input type="text" readonly="" id="clintseed" class="form-control clintseed">
+										        <button class="Button-sc-1n30nq3-0 jVozgq changeClintseed"><span class="styles__Wrap-gfba6z-0 jqggeP"><span>Change</span></span></button>
+										      </div>
+										      <div class="md-form mb-4">
+										        <label for="serverseed">Server Seed</label>
+										        <input type="text" readonly="" id="serverseed" class="form-control serverseed">
+										        <button class="Button-sc-relats-0 jVozgq changeServerseed"><span class="styles__Wrap-gfba6z-0 jqggeP"><span>Change</span></span></button>
+										      </div>
+										      <div class="md-form mb-4">
+										        <label for="nonce">Nonce</label>
+										        <input type="number" readonly="" id="nonce" class="form-control nonce">
+										      </div>
+										    </div>
+										  </div>
+										</div>
+										</div>
+										<div class="tab-pane fade" id="change_server_seed" role="tabpanel" aria-labelledby="change_server_seed-tab">
+										<div class="modal-dialog" role="document">
+										      <div class="modal-content">
+										        <div class="modal-header text-center">
+										          <h4 class="modal-title w-100 font-weight-bold">Fairness</h4>
+										        </div>
+										        <div class="modal-body mx-3">
+										          <div class="md-form mb-5">
+										            <label for="clintseed">Client Seed</label>
+										            <input type="text" id="copyclintseed" class="form-control clintseed">
+										           <button id="copytoclipclint" class="Button-sc-1n30nq3-0 jVozgq copytoclipclint" type="button"> <span class="styles__Wrap-gfba6z-0 jqggeP"><i class="fa fa-clone" aria-hidden="true"></i></span></button>
+										          </div>
+										          <div class="md-form mb-4">
+										            <label for="serverseed">Server Seed</label>
+										            <input type="text" id="copyserverseed" class="form-control serverseed">
+										           <button class="Button-sc-relats-0 jVozgq copytoclipserver" id="copytoclipserver" type="button"> <span class="styles__Wrap-gfba6z-0 jqggeP"><i class="fa fa-clone" aria-hidden="true"></i></span></button>
+										          </div>
+										          <div class="md-form mb-4">
+										            <label for="nonce">Nonce</label>
+										            <input type="number" readonly="" id="copynonce" class="form-control nonce">
+										          </div>
+										        </div>
+										      </div>
+										</div> 
+										</div>
+										<div class="tab-pane fade" id="calculation_game_data" role="tabpanel" aria-labelledby="calculation_game_data-tab">
+										   <div class="modal-dialog" role="document">
+										    <div class="modal-content">
+											  	<div class="modal-header text-center">
+											        <h4 class="modal-title w-100 font-weight-bold">Fairness</h4>
+											    </div>
+										    <div class="modal-body mx-3">
+										      <div class="md-form mb-4">
+										        <label for="clintSeedtxt">Client Seed</label>
+										        <input type="text" id="clintSeedtxt" class="form-control clintSeedtxt">
+										      </div>
+										      <div class="md-form mb-4">
+										        <label for="serverSeedtxt">Server Seed</label>
+										        <input type="text" id="serverseedtxt" class="form-control serverseedtxt">
+										      </div>
+										      <div class="md-form mb-4">
+										        <label for="noncetxt">Nonce</label>
+										        <input type="number" id="noncetxt" class="form-control noncetxt">
+										      </div>
+										      <div class="btn_respons">
+										      <button type="button" class="btn btn-primary findGameDetails">Find</button>
+										    </div>
+										    </div>
+										    
+										</div>
+										    <div class="final_result">Final Result</div>
+										 	<span class='final_results' style='color : aqua'></span>
+										</div>
+										</div>
+									</div>
+						        </div>
+				        	</div>
+				        </div>
+				    </div>
+		    	</div>
+	      	</div>
+	    </div>
+	</div>
+	
+<script type="text/javascript" src="/frontend/script/chat-common.js"></script>
+<script type="text/javascript">
+  ;(function($) {
+      var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
+          isIE = /msie/i.test( navigator.userAgent );
+      $.fn.customFile = function() {
+        return this.each(function() {
+
+          var $file = $(this).addClass('custom-file-upload-hidden'),
+              $wrap = $('<div class="file-upload-wrapper">'),
+              $input = $('<input type="text" placeholder="Profile Picture" class="file-upload-input" />'),
+              $button = $('<button type="button" class="file-upload-button">Choose here</button>'),
+              $label = $('<label class="file-upload-button" for="'+ $file[0].id +'">Choose here</label>');
+          $file.css({
+            position: 'absolute',
+            left: '-9999px'
+          });
+					
+          $wrap.insertAfter( $file )
+            .append( $file, $input, ( isIE ? $label : $button ) );
+          $file.attr('tabIndex', -1);
+          $button.attr('tabIndex', -1);
+          $button.click(function () {
+            $file.focus().click(); 
+          });
+
+          $file.change(function() {
+						
+						
+            var files = [], fileArr, filename;
+            if ( multipleSupport ) {
+              fileArr = $file[0].files;
+              for ( var i = 0, len = fileArr.length; i < len; i++ ) {
+                files.push( fileArr[i].name );
+              }
+              filename = files.join(', ');
+            } else {
+              filename = $file.val().split('\\').pop();
+            }
+						
+            $input.val( filename )
+              .attr('title', filename)
+              .focus();
+          });
+
+          $input.on({
+            blur: function() { $file.trigger('blur'); },
+            keydown: function( e ) {
+              if ( e.which === 13 ) { 
+                if ( !isIE ) { $file.trigger('click'); profile = true;}
+              } else if ( e.which === 8 || e.which === 46 ) {
+                $file.replaceWith( $file = $file.clone( true ) );
+                $file.trigger('change');
+								profile = true;
+                $input.val('');
+              } else if ( e.which === 9 ){
+                return;
+              } else { 
+                return false;
+              }
+            }
+          });
+        });
+      };
+      if ( !multipleSupport ) {
+        $( document ).on('change', 'input.customfile', function() {
+          var $this = $(this),
+              uniqId = 'customfile_'+ (new Date()).getTime(),
+              $wrap = $this.parent(),
+              $inputs = $wrap.siblings().find('.file-upload-input')
+                .filter(function(){ return !this.value }),
+              $file = $('<input type="file" id="'+ uniqId +'" name="'+ $this.attr('name') +'"/>');
+          setTimeout(function() {
+            if ( $this.val() ) {
+              if ( !$inputs.length ) {
+                $wrap.after( $file );
+                $file.customFile();
+              }
+            } else {
+              $inputs.parent().remove();
+              $wrap.appendTo( $wrap.parent() );
+              $wrap.find('input').focus();
+            }
+          }, 1);
+
+        });
+      }
+  }(jQuery));
+  $('input[type=file]').customFile();
+</script>
+<!-- provably-fair Modal End -->

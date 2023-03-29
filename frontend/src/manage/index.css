@@ -1,0 +1,167 @@
+.content-main-view .nav-pills .nav-link.active { 
+
+}
+.content-main-view .nav-pills .nav-link { 
+  color: #fff;
+  border-radius: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.nav-list-menu {
+  background-color: #160538;
+  width: 100%;
+  height: 100vh;
+  padding: 0px;
+}
+
+.content-main-view .card-body .btn{ 
+  background: #007bff !important; 
+  border-radius: 5px; 
+  padding: 5px 11px; 
+  margin-left: 10px; 
+  position: relative; 
+  color: #fff !important; 
+}
+.content-main-view .card-body .btn:hover{
+  background-color: #fff !important; 
+  color: #160538 !important; 
+  border-color: #160538 !important; 
+  box-shadow: none; 
+}
+
+.card-header {
+  background-color: rgba(22, 5, 60, 0.8);
+
+}
+
+.card-body {
+  background-color: rgba(22, 5, 60, 0.4);
+}
+.card {
+  background-color: transparent;
+  border-color: #160538;
+  margin-top: 8px;
+}
+
+.deposit-top input {
+  background-color: transparent;
+  border-color: darkcyan;
+  color: white;
+}
+
+.deposit-top input:hover{
+  background-color: transparent;
+  border-color: white;
+  color: white;
+}
+
+.deposit-top input:focus{
+  background-color: transparent;
+  border-color: white;
+  color: white;
+  box-shadow: none;
+}
+
+.tb-header{
+  background-color: rgba(22, 5, 60, 0.8);
+  border-color: #160538;
+
+}
+
+.table {
+  color: white;
+  text-align-last: center;
+}
+
+td {
+  border-color: #160538;
+  background-color: rgba(22, 5, 60, 0.4);
+}
+
+th {
+  border-color: #160538 !important;
+  border-style: solid;
+  border-width: 1px;
+}
+
+td {
+  border-color: #160538 !important;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.profile-img { 
+  width: 120px; 
+  height: 120px;
+  display: block;
+}
+
+.profile-img-div {
+  text-align: -webkit-center;
+}
+
+.profile-body input {
+  background-color: transparent;
+  border-color: darkcyan;
+  color: white;
+}
+
+.profile-body input:hover{
+  background-color: transparent;
+  border-color: white;
+  color: white;
+}
+
+.profile-body input:focus{
+  background-color: transparent;
+  border-color: white;
+  color: white;
+  box-shadow: none;
+}
+
+.profile-body input:disabled{
+  background-color: transparent;
+  border-color: darkcyan;
+  color: darkcyan;
+  box-shadow: none;
+}
+
+.profile-body .btn{ 
+  background: #007bff !important; 
+  border-radius: 5px; 
+  padding: 5px 11px; 
+  margin-left: 10px; 
+  position: relative; 
+  color: #fff !important; 
+}
+.profile-body .btn:hover{
+  background-color: #fff !important; 
+  color: #160538 !important; 
+  border-color: #160538 !important; 
+  box-shadow: none; 
+}
+
+.profile-body {
+  color: white;
+}
+
+.btn-class {
+  text-align: center;
+}
+.profile-submit {
+  width: 300px;
+}
+
+.nft-communities-div {
+  padding: 24px;
+}
+
+.procrash-bg-border {
+  overflow: hidden;
+}
+.text-comment{
+  margin-top: 8px;
+  color: #cccbcb;
+  font-size: 15px;
+}

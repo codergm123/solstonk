@@ -1,0 +1,34 @@
+.gold-coin {
+  color: gold;
+  margin-top: -5px;
+  margin-right: 12px;
+}
+.info-card {
+  margin: 8px;
+  background-color: rgba(0,1,0, 0.5);
+  padding: 12px;
+  border-left: 4px solid;
+  color: darkcyan;
+}
+
+.info-title {
+  color: #55bd5c;
+}
+
+.info-div {
+  margin-top: 40px;
+}
+.claim-btn{
+  cursor : pointer;
+  margin-left : 16px;
+  font-size : 16px; 
+  background-color : #512da8; 
+  border-radius : 50px; 
+  padding : 4px 12px; 
+  color : white; 
+  display : inline-block;
+  transition: 0.5s;
+}
+.claim-btn:hover{
+  background-color: black;
+}

@@ -1,0 +1,122 @@
+
+<header class="navbar navbar-expand-lg flex-column flex-md-row fixed-top navbar-dark headerpart">
+		<nav>
+		    <a class="navbar-brand" href="/"><img src="frontend/img/header_logo.png" alt="header_logo">  </a>
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+					   
+	    	<div class="collapse navbar-collapse menu_toggle" id="navbarCollapse">
+		      <div class="form-inline mt-2 mt-md-0">
+		      	{% if auth.user %}
+				<ul class="navbar-nav user_links">
+		      		<li><a class="nav-link" href="{{config.baseUrl}}withdraw">Withdraw</a></li>
+		      		<li><a class="nav-link" href="{{config.baseUrl}}deposit">Deposit</a></li>
+					<li><a href="/logout" class="nav-link logout" id="logout" href="javascript:void(0);">Logout</a></li>
+
+					<li class="mobile_lang">
+						<a class="nav-link .bd-example-modal-lg" href="javascript:void(0);" data-toggle="modal" data-target="#profile">
+							<div class="btn-group">
+								<div class="language_select">
+									<div class="smit_icons">
+										<span><img src="/frontend/upload/user/{{auth.user.profile_image}}" style="border-radius: 50%; margin: 2px -3px 4px 2px"></span>
+										
+										<div class="smit_icons">
+											<div class="chat_user_head" >
+												{{auth.user.name}}
+												<span class="icons_wrop" ><span class="user_main_balance" id="current_balance">{{total_balance}} SOL</span></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li> 
+				</ul>
+				{% else %}  
+                <ul class="navbar-nav user_links mt-8 ">
+					<li><input type='text' class='custom-input' placeholder='Referral Code' id='referral'/> </li>
+		      		<li ><a class="nav-link userlogin custom-btn" id="userlogin" href="javascript:void(0);" data-toggle="modal" data-target="#login">login</a></li>
+		      		{#<li> - </li>
+		      		<li><a class="nav-link" href="javascript:void(0);" data-toggle="modal" data-target="#signup">Signup</a></li>#}
+		       	</ul>
+				{% endif %}
+		      </div>
+		 	</div> 
+		 	<a href="javascript:void(0);" class="chat_toggle"><i class="fa fa-comments"></i></a>
+		</nav>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <header class="navbar navbar-expand-lg flex-column flex-md-row fixed-top navbar-dark headerpart">
+		<nav>
+		    <a class="navbar-brand" href="index.html"><img src="img/header_logo.png" alt="headerpart">  </a>
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+					   
+	    	<div class="collapse navbar-collapse menu_toggle" id="navbarCollapse">
+		      <div class="form-inline mt-2 mt-md-0">
+		      	<ul class="navbar-nav user_links">
+		      		<li><a class="nav-link" href="javascript:void(0);">Withdraw</a></li>
+		      		<li><a class="nav-link" href="javascript:void(0);">Deposit</a></li>
+		      	</ul>
+		      	<ul class="navbar-nav user_links btn_lsn">
+		      		<li><a class="nav-link" href="javascript:void(0);" data-toggle="modal" data-target="#login">login</a></li>
+		      		<li> - </li>
+		      		<li><a class="nav-link" href="javascript:void(0);" data-toggle="modal" data-target="#signup">Signup</a></li>
+		      	</ul>
+		      </div>
+		 	</div> 
+		 	<a href="javascript:void(0);" class="chat_toggle"><i class="fa fa-comments"></i></a>
+		</nav>
+</header> -->
+
+<!-- <li class="mobile_lang">
+						<div class="btn-group">
+							<a href="#" class="language_select" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span><img src="img/smith.png"></span>
+								<div class="smit_icons">
+									<div class="chat_user_head">
+										Smith Gray
+										<span class="icons_wrop"><img src="img/wallet.png"> $1200</span>
+									</div>
+								</div>
+							</a>
+						  <div class="dropdown-menu dropdown-menu-right">
+						  	<a href="edit-profile.html" class="dropdown-item">Profile</a>
+						  	<a href="game-history.html" class="dropdown-item">Bet history</a>
+						  	<a href="skin-trading.html" class="dropdown-item">Skin trading</a>
+						  	<a href="index.html" class="dropdown-item">Logout</a>
+						  </div>
+						</div>
+					</li> -->
+
+
+                    <!-- <div class="dropdown-menu dropdown-menu-right">
+							  	<a href="edit-profile.html" class="dropdown-item">Profile</a>
+							  	<a href="game-history.html" class="dropdown-item">Bet history</a>
+							  	<a href="skin-trading.html" class="dropdown-item">Skin trading</a>
+							  	<a href="index.html" class="dropdown-item">Logout</a>
+							</div> -->

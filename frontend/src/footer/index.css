@@ -1,0 +1,34 @@
+footer { 
+  background: #160538; 
+  height: 36px;
+  padding: 4px 0px; 
+  width: 100%; 
+  position: fixed;
+  bottom: 0;
+}
+footer ul { 
+  margin: 0px; 
+  padding: 0px; 
+  text-align: center; 
+  width: 100%;
+}
+footer ul li { 
+  display: inline; 
+}
+footer ul li { 
+  text-transform: uppercase; 
+  color: #fff; 
+  padding: 0px 10px; 
+  border-right: 1px solid #fff; 
+  font-family: 'FagoCoLf'; 
+  font-size: 14px;
+}
+footer ul li:last-child a { 
+  border-right: 0px; 
+}
+footer ul li a:hover, footer ul li a:focus { 
+  color: rgb(255 255 255 / 55%); 
+  text-decoration: none; 
+  cursor: pointer;
+}
+.footer_menu { width: 100%; display: flex; align-items: center; }

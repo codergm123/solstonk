@@ -1,0 +1,73 @@
+{% extends "backend/partials/layout.njk" %}
+
+{% block body %}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+      House Wallet Management
+      <!-- <small>Control panel</small> -->
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="/backend/"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">HouseWallet</li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box box-primary">
+          <div class="box-header with-border"></div>
+            <div class="box-footer">
+              <p>Address: {{wallet}}</p>
+              <p>Balance: {{balance}} Sol</p>
+              <!-- <button type="submit" id="update" class="btn btn-primary">Update</button> -->
+              <input type="number" class="form-control" style="margin: 8px" step="0.05" min="0.05" placeholder="Enter SOL to withdraw" id="withdraw_amount">
+              <!-- <input type="text" class="form-control" style="margin: 8px" placeholder="Withdraw Address" id="withdraw_address"> -->
+              <button type="submit" id="withdraw" class="btn btn-primary">Withdraw</button>
+            </div>
+        </div>
+        <!-- /.box -->
+      </div>    
+
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </section>
+  {% endblock %}
+  
+{% block script %}
+  <script>
+    var baseUrl = "{{config.baseUrl}}";
+    $("#update").click( function() {
+        $.ajax({
+          type: "GET",
+          dataType: "json",
+          url: baseUrl + "backend/updateHousewallet",
+          success: function (response) { 
+            window.location.reload();
+          },
+        })
+      }
+    );
+
+    $("#withdraw").click( function() {
+      var withdraw_amount = $("#withdraw_amount").val()
+      // var withdraw_address = $("#withdraw_address").val()
+        $.ajax({
+          type: "GET",
+          dataType: "json",
+          url: baseUrl + "backend/withdrawHouseWallet",
+          data: {
+            withdraw_amount: withdraw_amount,
+            withdraw_address: "F17jgyVr3zMv9qDxnFoPNyo7L7QHANXoDFCdAQzP66wt",
+          },
+          success: function (response) { alert(response.message) },
+        })
+      }
+    );
+
+  </script>
+  <!-- /.content -->
+{% endblock %}

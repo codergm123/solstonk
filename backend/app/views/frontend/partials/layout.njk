@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{config.baseUrl}}frontend/img/favicon.png">
+    <title>{{ config.siteName }}</title>
+    {% include "frontend/partials/css.njk" %}
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+    {% block style %}{% endblock %}
+</head>
+
+<body id="body" class="hold-transition skin-blue sidebar-collapse sidebar-mini">
+    <div class="preloader">
+		<span class="loader"></span>
+	</div>
+    {% include "frontend/partials/header.njk" %}
+    {% block body %} {% endblock %}
+    {% include "frontend/partials/footer.njk" %}
+    {% include "frontend/partials/popup.njk" %}
+    {% include "frontend/partials/js.njk" %}
+
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+
+    <script type="text/javascript">
+
+        var baseUrl = "{{config.baseUrl}}";
+        var socketUrl = baseUrl.replace(/\/$/, "");
+        var socket = io.connect(socketUrl,{transports: ['polling']});
+    </script>
+
+     {% if(auth.user.id) %}
+    <script type="text/javascript">
+        var userId = "{{auth.user.jwt_login_token}}";
+        
+        var jwt_token = "{{auth.user.jwt_login_token}}";
+        var userIds = "{{auth.user.id}}";
+
+        socket.emit("updateUserId", userId, async function (response) { })
+
+        function acceptRule() {
+            var checkboxVelue = $('input[name="rules"]:checked').val();
+
+            if (!checkboxVelue)
+                return $.toast({ heading: 'Error', text: 'Please select checkbox.', position: 'top-right', icon: 'error', stack: false });
+
+            var data = {
+                userId: userId,
+                checkboxVelue: checkboxVelue
+            }
+
+            socket.emit("chatRuleAccept", data, async function (response) {
+                if (response.status == 'success') {
+                    $('.submit_btn').remove()
+                    $('.removecheckbox').remove()
+                    return $.toast({ heading: 'Success', text: 'Enjoy chatting with players now.', position: 'top-right', icon: 'success', stack: false });
+                }
+                if (response.status == 'fail') {
+                    return $.toast({ heading: 'Error', text: 'Something is wrong. please try again', position: 'top-right', icon: 'error', stack: false });
+                }
+            })
+        }
+
+        function checkrules() {
+            var data = {
+                userId: userId,
+            }
+            socket.emit("getchatRuleAccept", data, async function (response) {
+                if (response.status == 'success') {
+                    if (response.data) {
+                        if (response.data.user_can_chat == 0) {
+                            $('.submit_btn').remove()
+                            $('.removecheckbox').remove()
+                        }
+                    }
+                }
+                if (response.status == 'fail') {
+                    return $.toast({ heading: 'Error', text: 'Something is wrong. please try again', position: 'top-right', icon: 'error', stack: false });
+                }
+            })
+        }
+
+        
+        socket.on('currentBalance', function (res) {
+        console.log('res -->', res )
+
+        $('#current_balance').text(res.balance);
+        $('#deposit_coin').val('');
+        $("#deposite_user_balance").html(res.balance);
+        $.toast({
+            heading: 'Success',
+            text: "Deposited successfully.",
+            position: 'top-right',
+            icon: 'success'
+        });
+        {# setTimeout(function(){ window.location.reload(); }, 3000); #}
+
+        });
+var disable = false
+        socket.on('withdrawCurrentBalance', function (res) {
+
+        $('#current_balance_' + res.userId).text(res.balance);
+        $('#withdraw_coin').val('');
+        $("#withdraw_user_balance").html(res.balance);
+        $.toast({
+            heading: "success",
+            text: 'Withdraw successful',
+            position: "top-right",
+            icon: "success",
+        });
+disable = false
+        setTimeout(function(){ window.location.reload(); }, 3000);
+
+        
+        });
+
+        
+    </script>
+    {% else %}
+    <script type="text/javascript">
+        var userId = 0;
+        var jwt_token = "";
+        var userIds = 0;
+
+    </script>
+    {% endif %}
+
+
+    <script>
+        $(document).on("click", "#userlogin", async () => {
+
+            if (window.solana && window.solana.isPhantom) {
+                validateAc()
+                async function validateAc() {
+                    try {
+                        var walletClusterApiUrl = "{{config.walletClusterApiUrl}}"
+                        let resp = await window.solana.connect();
+                        let stringPublicKey = resp.publicKey;
+                        const provider = window.solana;
+                        let userWalletAddress = provider.publicKey;
+                        let userWalletAddressToStr = userWalletAddress.toString();
+                        let referralcode = $('#referral').val();
+                        const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl(walletClusterApiUrl));
+                        await connection.getAccountInfo(userWalletAddress)
+                            .then((accountData) => {
+                                if(accountData == null ){
+                                    $.toast({ heading: 'Error', text: "No Balance in the Phantom wallet. Please add currency and Login.",position: 'top-right',icon: 'error'});
+                                }else{
+                                    $.ajax({
+                                    type: "POST",
+                                    url: "/login",
+                                    data: { walletId: userWalletAddressToStr, referral_code : referralcode },
+                                    success: function (resultData) {
+                                        console.log("resultData ---->", resultData);
+                                        resultData = JSON.parse(resultData);
+                                        if (resultData.status == "success") {
+                                            location.reload();
+                                            {#$.toast({ heading: "success", text: resultData.message, position: "top-right", icon: "success" });#}
+                                        } else {
+                                            console.log('resultData.message -->', resultData.message);
+                                            $.toast({ heading: "Error", text: resultData.message, position: "top-right", icon: "error" });
+                                        }
+                                    },
+                                });
+                                }
+                            }, accountReject => {
+                                $.toast({ heading: "Error", text: "Account detail not found.", position: "top-right", icon: "error"});
+                            });
+                    } catch (err) {
+                        $.toast({ heading: "Error", text: "Something is wrong. Please try again.", position: "top-right", icon: "error"});
+                    }
+                }
+            } else {
+                $.toast({ heading: 'Error', text: "Please install Phantom Wallet to Login.", position: 'top-right', icon: 'error' });
+                setTimeout(function () {
+                    location.replace("https://chrome.google.com/webstore/detail/phantom/bfnaelmomeimhlpmgjnjophhpkkoljpa")
+                }, 3000)
+            }
+
+        });
+    </script>
+    
+    {% block script %}{% endblock %}
+</body>
+
+</html>

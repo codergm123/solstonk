@@ -1,0 +1,183 @@
+{% extends "frontend/partials/layout.njk" %}
+{% block body %}
+
+<body id="body" class="hold-transition skin-blue sidebar-collapse sidebar-mini">
+	<section class="main_wrap">
+		<!-- chatbar start -->
+		<div class="chatbar">
+			<div class="chatbar_title">
+				<div class="user_status">
+					<div class="chat_title">Chatbox</div>
+					<div class="total_users">
+						<span class="user_status_note"></span>
+						<span class="active_user">0</span>
+					</div>
+				</div>
+			</div>
+			<div class="charbar_message_list" id="chatscroll"></div>
+			<div class="chatbar_message_box">
+				<input type="text" class="form-control chat_message_div" placeholder="Type your message">
+				<button class="btn btn-send" onclick="chatMessageSave()"><span class="mtrlicsend"><img src="frontend/img/send_icons_chat.png" alt="chat user"></span></button>
+			</div>
+		</div>
+		<!-- content-wrapper start -->
+		<div class="content-wrapper">
+			<div class="container-fluid">
+				<div class="main_part grad_bg">
+					<div class="center_game_part">
+						<div class="content home-content">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 full-width">
+									<div class="inner_content ">
+										<div class="inner-padding ovr-hide">
+											<div class="banner">
+												<div class="banner_bar"></div>
+											</div>
+											<div class="roulette">
+												<div class="row">
+													<div class="col-lg-12">
+														<div class="inbox">
+															<div class="insidcas-case">
+																<div class="load-game">
+																	<div class="countdown-wrapper">
+																		<div class="countdown-timer">
+																			<div class="roling_txt">Rolling</div>
+																			<div class="counter">
+																				<div id="countdown">
+																					<div id="minutes"
+																						class="countdown-min">
+																						{{config.rouletteStartTime}}
+																					</div> 
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="slider-back-jack">
+																	<div id="scrollerContainer">
+																		<div id="caruselLine">
+																			<img src="frontend/img/center_slidr_bor.png" alt="chat user">
+																		</div>
+																		<div id="aCanvas">
+																			<div id="casesCarusel" class="slider-jack"></div>
+																		</div>
+																		<div class="fade-left"></div>
+																		<div class="fade-right"></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12 p-lr-0">
+														<div class="history-batch-list">
+															<div class="prog-cap">PREVIOUS ROLLS</div>
+															<ul class="list-inline list-unstyled">
+																{% for history in rouletteData %}
+																	{% if(history.game_stopped_on == 'danger')%}
+																		<li class="badges danger-gradiant" style="background: url('frontend/img/wrap.png'); background-size: 100%;"></li>
+																	{% endif %}
+
+																	{% if(history.game_stopped_on == 'green')%}
+																		<li class="badges success-gradiant"	style="background: url('frontend/img/sign.png'); background-size: 100%;"></li>
+																	{% endif %}
+
+																	{% if(history.game_stopped_on == 'black')%}
+																		<li class="badges dark-gradiant" style="background: url('frontend/img/jackpot.png'); background-size: 100%;"></li>
+																	{% endif %}
+																{% endfor %}
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="xs-p-lr-0 hidden-xs">
+													<div class="bet_amount">
+														<form class="form-inline bet_searchbox">
+															<div class="input-group bet-text-box">
+																<div class="input-group">
+																	<input type="text" class="form-control"	id="betAmounts" name="betAmounts"	placeholder="0">
+																</div>
+															</div>
+															<div class="btn-inline all_countbtn">
+																<a href="javascript:void(0)" class="btn bet-button" data-num="pointZeroFive">+0.05</a>
+																<a href="javascript:void(0)" class="btn bet-button" data-num="pointOne">+0.1</a>
+																<a href="javascript:void(0)" class="btn bet-button" data-num="pointTwoFive">+0.25</a>
+																<a href="javascript:void(0)" class="btn bet-button" data-num="multification">2x</a>
+																<a href="javascript:void(0)" class="btn bet-button" data-num="devided">1/2</a>
+																<a href="javascript:void(0)" class="btn bet-button" data-num="Max">STONK MODE</a>
+																<a href="javascript:void(0)" class="btn bet-button" data-num="Clear">Clear</a>
+															</div>
+														</form>
+													</div>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+										<div class="row three_tbl">
+											<div class="col-md-4 col-sm-4 divDisable red-winner">
+												<div class="panel winbox">
+													<div class="box-body">
+														<div class="">
+															<button type="button" class="btn pink_bg_btn btn-play danger_bg_btn" data-color="danger">Win 2X</button>
+															<div class="winboxplayer_title plred" id="danger">Player(0)</div>
+															<div class="red-winner">
+																<div class="winbox-body">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4 col-sm-4 divDisable green-winner">
+												<div class="panel winbox">
+													<div class="box-body">
+														<div class="">
+															<button type="button" class="btn pink_bg_btn green_bg_btn btn-play" data-color="green">Win 14X</button>
+															<div class="winboxplayer_title plgreen" id="green">Player(0)</div>
+															<div class="green-winner">
+																<div class="winbox-body">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4 col-sm-4 divDisable grey-winner">
+												<div class="panel winbox">
+													<div class="box-body">
+														<div class="">
+															<button type="button" class="btn pink_bg_btn black_bg_btn btn-play" data-color="grey">Win 2X</button>
+															<div class="winboxplayer_title plgrey" id="black">Player(0)</div>
+															<div class="grey-winner">
+																<div class="winbox-body">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						<!-- game main section End-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- content-wrapper end -->
+	</section>
+</body>
+{% endblock %}
+
+{% block script %}
+<script>
+	let minBet="{{setting.min_bet}}";
+	let maxBet="{{setting.max_bet}}";
+</script>
+<script type="text/javascript" src="/frontend/script/roulette-common.js"></script>
+<script type="text/javascript" src="/frontend/script/chat-common.js"></script>
+{% endblock %}
+<!-- </html> -->

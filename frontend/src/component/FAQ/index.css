@@ -1,0 +1,9 @@
+.faq{
+    color : gold;
+    cursor: pointer;
+    background-color: rgba(115, 85, 180, 0.2);
+    padding: 8px;
+}
+.faq_content{
+    padding:16px;
+}
